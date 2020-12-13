@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+	
+	<children>
+		<Button contentDisplay="CENTER" layoutX="503.0" layoutY="441.0" mnemonicParsing="false" onAction="#login" prefHeight="30.0" prefWidth="66.0" text="Login">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+		<TextField fx:id="txtUsername" layoutX="300.0" layoutY="319.0" prefHeight="36.0" prefWidth="269.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></TextField>
+		<PasswordField fx:id="txtPassword" layoutX="300.0" layoutY="380.0" prefHeight="36.0" prefWidth="269.0">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></PasswordField>
+		<Label fx:id="lblError" alignment="CENTER" layoutX="209.0" layoutY="505.0" prefHeight="47.0" prefWidth="359.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="lblError1" alignment="CENTER_RIGHT" layoutX="158.0" layoutY="385.0" prefHeight="27.0" prefWidth="123.0" text="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblError2" alignment="CENTER" contentDisplay="CENTER" layoutX="107.0" layoutY="125.0" prefHeight="149.0" prefWidth="586.0" text="RealTime Application Monitoring &amp; Issue Tracker">
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblError11" alignment="CENTER_RIGHT" layoutX="158.0" layoutY="324.0" prefHeight="27.0" prefWidth="123.0" text="Email">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+	</children>
+
+</AnchorPane>

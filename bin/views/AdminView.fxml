@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Separator?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+
+<AnchorPane maxHeight="900.0" maxWidth="800.0" prefHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminController">
+   <children>
+      <Label alignment="CENTER" layoutX="302.0" layoutY="87.0" prefHeight="51.0" prefWidth="210.0" text="Admin Panel" textAlignment="CENTER" textFill="#1c1e1d">
+         <font>
+            <Font name="Arial" size="31.0" />
+         </font></Label>
+      <Button layoutX="42.0" layoutY="206.0" mnemonicParsing="false" onAction="#addUser" text="Create New User">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button layoutX="499.0" layoutY="206.0" mnemonicParsing="false" onAction="#auditUser" prefHeight="25.0" prefWidth="105.0" text="Users List">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button layoutX="210.0" layoutY="206.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="105.0" text="Update user">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button layoutX="343.0" layoutY="206.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="25.0" prefWidth="105.0" text="Delete User">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button layoutX="644.0" layoutY="206.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="105.0" text="Logout">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      
+      <Pane fx:id="pane1" layoutX="34.0" layoutY="291.0" prefHeight="543.0" prefWidth="732.0" style="-fx-border-color: black; -fx-border-width: 2;" >
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Button layoutX="452.0" layoutY="355.0" mnemonicParsing="false" onAction="#createUser" prefHeight="32.0" prefWidth="84.0" text="Create">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Button>
+            
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="53.0" prefHeight="25.0" prefWidth="313.0" text="Create New User">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></Label>
+            
+            <Label layoutX="204.0" layoutY="120.0" text="First Name">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
+            <TextField fx:id="fn" layoutX="306.0" layoutY="116.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="204.0" layoutY="163.0" text="Last Name">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ln" layoutX="306.0" layoutY="159.0" prefHeight="32.0" prefWidth="230.0" />
+            
+            <Label layoutX="231.0" layoutY="211.0" prefHeight="17.0" prefWidth="57.0" text="Email">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="em" layoutX="306.0" layoutY="207.0" prefHeight="32.0" prefWidth="230.0" />
+           
+            <Label layoutX="211.0" layoutY="259.0" text="Password">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="pw" layoutX="306.0" layoutY="255.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="231.0" layoutY="307.0" text="Admin">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="ur" layoutX="306.0" layoutY="303.0" prefHeight="32.0" prefWidth="230.0" value="USER">
+	           <items>
+		           <FXCollections fx:factory="observableArrayList">
+		               <String fx:value="ADMIN" />
+          				<String fx:value="MANAGER" />
+          				<String fx:value="USER" />
+		           </FXCollections>
+	     		</items>
+	     	</ChoiceBox>
+            <Label fx:id="msg" alignment="CENTER" contentDisplay="CENTER" layoutX="231.0" layoutY="428.0" prefHeight="51.0" prefWidth="313.0" textAlignment="CENTER" textFill="#1060eb">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="pane2" layoutX="34.0" layoutY="291.0" prefHeight="543.0" prefWidth="732.0" style="-fx-border-color: black; -fx-border-width: 2;" visible="false">
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Button layoutX="452.0" layoutY="407.0" mnemonicParsing="false" onAction="#updateUserRec" prefHeight="32.0" prefWidth="84.0" text="Update">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="fnU" layoutX="306.0" layoutY="164.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="53.0" prefHeight="25.0" prefWidth="313.0" text="Update User">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="lnU" layoutX="306.0" layoutY="211.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="204.0" layoutY="168.0" text="First Name">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="215.0" text="Last Name">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emU" layoutX="306.0" layoutY="259.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="231.0" layoutY="263.0" prefHeight="17.0" prefWidth="57.0" text="Email">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="pwU" layoutX="306.0" layoutY="307.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="211.0" layoutY="311.0" text="Password">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="231.0" layoutY="359.0" text="Admin">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userIdU" layoutX="306.0" layoutY="118.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="227.0" layoutY="126.0" text="User ID">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="urU" layoutX="306.0" layoutY="351.0" prefHeight="32.0" prefWidth="230.0" value="USER">
+	           <items>
+		           <FXCollections fx:factory="observableArrayList">
+		                <String fx:value="ADMIN" />
+          				<String fx:value="MANAGER" />
+          				<String fx:value="USER" />
+		           </FXCollections>
+	     		</items>
+	     	</ChoiceBox>
+            <Label fx:id="msgU" alignment="CENTER" contentDisplay="CENTER" layoutX="223.0" layoutY="450.0" prefHeight="51.0" prefWidth="313.0" textFill="#1060eb">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="pane3" layoutX="34.0" layoutY="291.0" prefHeight="543.0" prefWidth="732.0" style="-fx-border-color: black; -fx-border-width: 2;" visible="false">
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Button layoutX="452.0" layoutY="186.0" mnemonicParsing="false" onAction="#deleteUserRec" prefHeight="32.0" prefWidth="84.0" text="Delete">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="53.0" prefHeight="25.0" prefWidth="313.0" text="Delete User">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userIdD" layoutX="306.0" layoutY="118.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="227.0" layoutY="126.0" text="User ID">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="msgD" alignment="CENTER" contentDisplay="CENTER" layoutX="231.0" layoutY="428.0" prefHeight="51.0" prefWidth="313.0" textAlignment="CENTER" textFill="#1060eb">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="pane4" layoutX="34.0" layoutY="291.0" prefHeight="543.0" prefWidth="732.0" style="-fx-border-color: black; -fx-border-width: 2;" visible="false">
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="10.0" prefHeight="25.0" prefWidth="313.0" text="Users List">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblUsers" layoutX="6.0" layoutY="39.0" prefHeight="494.0" prefWidth="722.0">
+              <columns>
+                 <TableColumn fx:id="id" prefWidth="43.0" text="ID" />
+                 <TableColumn fx:id="fname" prefWidth="185.0" text="First Name" />
+			     <TableColumn fx:id="lname" prefWidth="201.0" text="Last Name" />
+			     <TableColumn fx:id="mail" prefWidth="196.0" text="Email" />
+			     <TableColumn fx:id="role" prefWidth="94.0" text="Role" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Separator layoutX="42.0" layoutY="252.0" prefHeight="6.0" prefWidth="716.0" />
+      <Separator layoutX="42.0" layoutY="179.0" prefHeight="6.0" prefWidth="716.0" />
+   </children>
+</AnchorPane>

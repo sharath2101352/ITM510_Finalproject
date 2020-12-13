@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="900.0" maxWidth="800.0" prefHeight="900.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserController">
+   <children>
+      <Label alignment="CENTER" layoutX="276.0" layoutY="84.0" prefHeight="51.0" prefWidth="266.0" text="Issue Tracker" textAlignment="CENTER" textFill="#1c1e1d">
+         <font>
+            <Font name="Arial" size="31.0" />
+         </font></Label>
+      <Button layoutX="42.0" layoutY="206.0" mnemonicParsing="false" onAction="#addTicket" text="Create Ticket">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button layoutX="449.0" layoutY="206.0" mnemonicParsing="false" onAction="#listTickets" prefHeight="26.0" prefWidth="135.0" text="List all Tickets">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button layoutX="234.0" layoutY="206.0" mnemonicParsing="false" onAction="#updateTickets" prefHeight="26.0" prefWidth="135.0" text="Update Ticket">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font></Button>
+      <Button layoutX="644.0" layoutY="206.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="105.0" text="Logout">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Button>
+      
+      <Pane fx:id="pane1" layoutX="34.0" layoutY="291.0" prefHeight="543.0" prefWidth="732.0" style="-fx-border-color: black; -fx-border-width: 2;" >
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Button layoutX="422.0" layoutY="361.0" mnemonicParsing="false" onAction="#createTicket" prefHeight="32.0" prefWidth="84.0" text="Create">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Button>
+            
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="46.0" prefHeight="25.0" prefWidth="313.0" text="Create New Ticket">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font></Label>
+            
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="174.0" layoutY="120.0" prefHeight="16.0" prefWidth="62.0" text="Issue">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
+            <TextField fx:id="issueC" layoutX="276.0" layoutY="116.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="174.0" layoutY="163.0" text="Assign To">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="assignC" layoutX="276.0" layoutY="159.0" prefHeight="32.0" prefWidth="230.0" />
+            
+            <Label layoutX="174.0" layoutY="211.0" prefHeight="17.0" prefWidth="84.0" text="Description">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="desC" layoutX="276.0" layoutY="207.0" prefHeight="84.0" prefWidth="230.0" />
+            <Label layoutX="201.0" layoutY="313.0" text="Status">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="statusC" layoutX="276.0" layoutY="309.0" prefHeight="32.0" prefWidth="230.0" value="OPEN">
+	           <items>
+		           <FXCollections fx:factory="observableArrayList">
+		               <String fx:value="OPEN" />
+          				<String fx:value="IN-PROGRESS" />
+          				<String fx:value="CLOSED" />
+		           </FXCollections>
+	     		</items>
+	     	</ChoiceBox>
+            <Label fx:id="msgC" alignment="CENTER" contentDisplay="CENTER" layoutX="201.0" layoutY="426.0" prefHeight="51.0" prefWidth="313.0" textAlignment="CENTER" textFill="#1060eb">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="pane2" layoutX="34.0" layoutY="291.0" prefHeight="543.0" prefWidth="732.0" style="-fx-border-color: black; -fx-border-width: 2;" visible="false">
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Button layoutX="417.0" layoutY="406.0" mnemonicParsing="false" onAction="#updateTicket" prefHeight="32.0" prefWidth="84.0" text="Update">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="196.0" layoutY="51.0" prefHeight="25.0" prefWidth="313.0" text="Update Ticket">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="169.0" layoutY="160.0" prefHeight="16.0" prefWidth="62.0" text="Issue">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="issueU" layoutX="271.0" layoutY="156.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="169.0" layoutY="203.0" text="Assign To">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="assignU" layoutX="271.0" layoutY="199.0" prefHeight="32.0" prefWidth="230.0" />
+            <Label layoutX="169.0" layoutY="251.0" prefHeight="17.0" prefWidth="84.0" text="Description">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="desU" layoutX="271.0" layoutY="247.0" prefHeight="84.0" prefWidth="230.0" />
+            <Label layoutX="196.0" layoutY="355.0" text="Status">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="statusU" layoutX="271.0" layoutY="351.0" prefHeight="32.0" prefWidth="230.0" value="OPEN">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="OPEN" />
+          				<String fx:value="IN-PROGRESS" />
+          				<String fx:value="CLOSED" />
+                  </FXCollections>
+               </items>
+            </ChoiceBox>
+            <Label fx:id="msgU" alignment="CENTER" contentDisplay="CENTER" layoutX="196.0" layoutY="458.0" prefHeight="51.0" prefWidth="313.0" textAlignment="CENTER" textFill="#1060eb">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="169.0" layoutY="106.0" prefHeight="16.0" prefWidth="62.0" text="Ticket ID">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="idU" layoutX="271.0" layoutY="102.0" prefHeight="32.0" prefWidth="230.0" />
+            <Button layoutX="533.0" layoutY="102.0" mnemonicParsing="false" onAction="#getTicket" prefHeight="32.0" prefWidth="84.0" text="GET">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="pane3" layoutX="34.0" layoutY="291.0" prefHeight="543.0" prefWidth="732.0" style="-fx-border-color: black; -fx-border-width: 2;" visible="false">
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="10.0" prefHeight="25.0" prefWidth="313.0" text="Tickets List">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblIssues" layoutX="6.0" layoutY="39.0" prefHeight="494.0" prefWidth="722.0">
+              <columns>
+                 <TableColumn fx:id="id" prefWidth="72.0" text="ID" />
+                 <TableColumn fx:id="issue" prefWidth="275.0" text="Issue" />
+			     <TableColumn fx:id="assigned" prefWidth="233.0" text="Assigned" />
+			     <TableColumn fx:id="status" prefWidth="140.0" text="Status" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Separator layoutX="42.0" layoutY="252.0" prefHeight="6.0" prefWidth="716.0" />
+      <Separator layoutX="42.0" layoutY="179.0" prefHeight="6.0" prefWidth="716.0" />
+   </children>
+</AnchorPane>
